@@ -1,651 +1,740 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catálogo Moda 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nube Noba — Catálogo de Pendientes 2025</title>
+  <meta name="description" content="Catálogo de pendientes artesanales Nube Noba 2025. Joyería artesanal hecha a mano." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & TOKENS ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --ink: #1a1108;
-    --cream: #f5f0e8;
-    --warm: #e8dcc8;
-    --gold: #c9a84c;
-    --gold-light: #e8c96a;
-    --shadow: rgba(30,15,0,0.18);
-    --page-w: 420px;
-    --page-h: 580px;
-  }
+    :root {
+      --teal:       #0e6474;
+      --teal-light: #1a8fa5;
+      --teal-pale:  #d6eef3;
+      --sky:        #e8f6fb;
+      --sky-deep:   #c8e8f2;
+      --white:      #ffffff;
+      --ink:        #0d2d35;
+      --muted:      #5a8a96;
+      --page-bg:    #f0f9fc;
+      --shadow:     rgba(14,100,116,0.15);
 
-  body {
-    background: #2b1f12;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    overflow: hidden;
-    background-image:
-      radial-gradient(ellipse at 20% 50%, rgba(100,60,20,0.4) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 50%, rgba(60,30,10,0.4) 0%, transparent 60%);
-  }
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
 
-  /* TITLE */
-  .catalog-title {
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    opacity: 0.85;
-  }
+      --spread-w: 900px;
+      --page-h:   560px;
+      --half:     450px;
+    }
 
-  /* BOOK WRAPPER */
-  .book-scene {
-    perspective: 2000px;
-    position: relative;
-  }
+    html { scroll-behavior: smooth; }
 
-  .book {
-    width: calc(var(--page-w) * 2);
-    height: var(--page-h);
-    position: relative;
-    transform-style: preserve-3d;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
-  }
+    body {
+      font-family: var(--font-body);
+      background: var(--page-bg);
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(14,100,116,0.07) 0%, transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(14,100,116,0.05) 0%, transparent 40%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--ink);
+      padding: 0 16px 60px;
+      overflow-x: hidden;
+    }
 
-  /* SPINE */
-  .book::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 12px;
-    height: 100%;
-    background: linear-gradient(to right, #8b6914, #c9a84c, #8b6914);
-    transform: translateX(-50%);
-    z-index: 10;
-    box-shadow: 0 0 12px rgba(0,0,0,0.5);
-  }
+    /* ── HEADER ─────────────────────────────────────────── */
+    .site-header {
+      width: 100%;
+      max-width: var(--spread-w);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 20px;
+      border-bottom: 1px solid var(--teal-pale);
+      margin-bottom: 32px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-cloud {
+      width: 38px; height: 38px;
+      background: var(--teal);
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      position: relative;
+    }
+    .logo-cloud::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: 6px;
+      width: 20px; height: 20px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .logo-cloud::after {
+      content: '';
+      position: absolute;
+      top: -4px; right: 4px;
+      width: 14px; height: 14px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--teal);
+      letter-spacing: -0.01em;
+    }
+    .logo-text em {
+      font-style: italic;
+      color: var(--teal-light);
+    }
+    .header-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
-  /* PAGE BASE */
-  .page {
-    position: absolute;
-    width: var(--page-w);
-    height: var(--page-h);
-    top: 0;
-    transform-origin: left center;
-    transform-style: preserve-3d;
-    transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    cursor: pointer;
-  }
+    /* ── BOOK WRAPPER ───────────────────────────────────── */
+    .book-container {
+      width: 100%;
+      max-width: var(--spread-w);
+      position: relative;
+    }
 
-  .page.right-page { left: var(--page-w); transform-origin: left center; }
-  .page.left-page  { left: 0;            transform-origin: right center; }
+    /* ── SPREAD (two pages) ─────────────────────────────── */
+    .spread {
+      display: none;
+      width: 100%;
+      min-height: var(--page-h);
+      background: var(--white);
+      border-radius: 4px 4px 4px 4px;
+      box-shadow:
+        0 2px 4px var(--shadow),
+        0 8px 32px rgba(14,100,116,0.12),
+        0 24px 64px rgba(14,100,116,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .spread.active { display: flex; animation: pagein .35s ease; }
 
-  /* FRONT / BACK faces */
-  .page-front, .page-back {
-    position: absolute;
-    width: 100%; height: 100%;
-    backface-visibility: hidden;
-    overflow: hidden;
-    border-radius: 0 4px 4px 0;
-  }
-  .page-back {
-    transform: rotateY(180deg);
-    border-radius: 4px 0 0 4px;
-  }
+    @keyframes pagein {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-  /* Page texture */
-  .page-front, .page-back {
-    background: var(--cream);
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  }
+    /* Spine */
+    .spread::before {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0;
+      width: 2px; height: 100%;
+      background: linear-gradient(to bottom, var(--teal-pale), var(--sky-deep), var(--teal-pale));
+      transform: translateX(-50%);
+      z-index: 5;
+    }
 
-  /* Page shadow on right */
-  .page-front::after {
-    content: '';
-    position: absolute;
-    right: 0; top: 0;
-    width: 30px; height: 100%;
-    background: linear-gradient(to right, transparent, rgba(0,0,0,0.07));
-    pointer-events: none;
-  }
+    /* ── LEFT / RIGHT PAGES ─────────────────────────────── */
+    .page-left, .page-right {
+      flex: 1;
+      min-height: var(--page-h);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-left  { border-right: none; }
+    .page-right { border-left: none; }
 
-  /* Fold animation */
-  .page.flipping-forward { transform: rotateY(-180deg); z-index: 5; }
-  .page.flipped           { transform: rotateY(-180deg); z-index: 1; }
+    /* ── COVER SPREAD ───────────────────────────────────── */
+    .cover-left {
+      background: var(--sky);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .cover-cloud-big {
+      width: 100px; height: 100px;
+      background: var(--teal);
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      position: relative;
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+    .cover-cloud-big::before {
+      content: '';
+      position: absolute;
+      top: -28px; left: 12px;
+      width: 56px; height: 56px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .cover-cloud-big::after {
+      content: '';
+      position: absolute;
+      top: -16px; right: 8px;
+      width: 40px; height: 40px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .cover-left h1 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      color: var(--teal);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+    .cover-left h1 em { font-style: italic; color: var(--teal-light); }
+    .cover-subtitle {
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .cover-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--teal);
+      opacity: 0.7;
+    }
 
-  /* ---- COVER PAGE ---- */
-  .cover {
-    background: linear-gradient(145deg, #1a1108 0%, #2d1e0f 40%, #1a1108 100%) !important;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 40px;
-    text-align: center;
-    border-radius: 0 4px 4px 0;
-  }
-  .cover-line { width: 60px; height: 1px; background: var(--gold); margin: 12px auto; }
-  .cover h1 {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 2.6rem;
-    line-height: 1.15;
-    font-weight: 700;
-  }
-  .cover h1 em { font-style: italic; color: var(--gold-light); }
-  .cover .subtitle {
-    color: rgba(201,168,76,0.6);
-    font-size: 0.75rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    margin-top: 16px;
-  }
-  .cover .season {
-    color: var(--cream);
-    font-size: 1rem;
-    margin-top: 20px;
-    opacity: 0.5;
-    font-style: italic;
-  }
-  .cover-decor {
-    width: 120px; height: 120px;
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 24px;
-  }
-  .cover-decor svg { width: 60px; height: 60px; opacity: 0.7; }
+    /* INDEX PAGE (right of cover) */
+    .index-page {
+      background: var(--white);
+      padding: 40px 36px;
+      overflow-y: auto;
+    }
+    .index-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--teal);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--teal-pale);
+    }
+    .index-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .index-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      cursor: pointer;
+      padding: 5px 8px;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .index-item:hover { background: var(--sky); }
+    .index-num {
+      font-size: 0.65rem;
+      color: var(--muted);
+      min-width: 22px;
+      font-weight: 500;
+    }
+    .index-name {
+      font-size: 0.88rem;
+      color: var(--ink);
+      flex: 1;
+    }
+    .index-series {
+      font-size: 0.68rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .index-price {
+      font-size: 0.78rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
 
-  /* ---- PRODUCT PAGE ---- */
-  .product-page {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 0;
-  }
-  .product-image {
-    width: 100%;
-    height: 62%;
-    object-fit: cover;
-    display: block;
-    background: var(--warm);
-    position: relative;
-    overflow: hidden;
-  }
-  /* Illustrated product placeholder */
-  .product-illus {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 6rem;
-  }
-  .product-info {
-    padding: 20px 24px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-top: 1px solid rgba(201,168,76,0.25);
-  }
-  .product-category {
-    font-size: 0.65rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-  .product-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.45rem;
-    color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .product-desc {
-    font-size: 0.82rem;
-    color: #5a4a38;
-    line-height: 1.6;
-    flex: 1;
-  }
-  .product-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(0,0,0,0.07);
-  }
-  .product-ref {
-    font-size: 0.65rem;
-    color: #9a8a78;
-    letter-spacing: 0.2em;
-  }
-  .product-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--ink);
-  }
-  .product-price span { font-size: 0.7rem; color: #9a8a78; margin-left: 2px; }
+    /* ── PRODUCT SPREAD ─────────────────────────────────── */
 
-  /* ---- LEFT PAGE (back of previous) ---- */
-  .left-info-page {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 32px 28px;
-    background: var(--cream);
-  }
-  .page-number {
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    color: #c9a84c;
-    text-transform: uppercase;
-    margin-bottom: auto;
-  }
-  .detail-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--ink);
-    line-height: 1.2;
-    margin-top: auto;
-    margin-bottom: 16px;
-    font-style: italic;
-  }
-  .detail-desc {
-    font-size: 0.88rem;
-    color: #5a4a38;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  .detail-specs {
-    list-style: none;
-    border-top: 1px solid rgba(201,168,76,0.3);
-    padding-top: 16px;
-  }
-  .detail-specs li {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.78rem;
-    color: #7a6a58;
-    padding: 5px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-  }
-  .detail-specs li strong { color: var(--ink); font-weight: 600; }
-  .color-dots { display: flex; gap: 6px; margin-top: 16px; }
-  .color-dot {
-    width: 16px; height: 16px;
-    border-radius: 50%;
-    border: 1px solid rgba(0,0,0,0.15);
-  }
+    /* Left info page */
+    .product-info-page {
+      background: var(--sky);
+      padding: 44px 40px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-num {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: auto;
+    }
+    .product-series-tag {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+    .product-name-big {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      color: var(--teal);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .product-name-big em { font-style: italic; color: var(--teal-light); }
+    .product-divider {
+      width: 48px; height: 2px;
+      background: var(--teal-light);
+      margin-bottom: 18px;
+      border-radius: 2px;
+    }
+    .product-desc-text {
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.75;
+      flex: 1;
+      opacity: 0.8;
+    }
+    .product-price-big {
+      margin-top: 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .product-price-big .amount {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .product-price-big .currency {
+      font-size: 1.2rem;
+      color: var(--teal-light);
+    }
+    .product-price-big .label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
 
-  /* ---- BACK COVER ---- */
-  .back-cover {
-    background: linear-gradient(145deg, #1a1108 0%, #2d1e0f 100%) !important;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center;
-    padding: 40px;
-    border-radius: 4px 0 0 4px;
-  }
-  .back-cover p {
-    color: rgba(201,168,76,0.5);
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-  }
-  .back-cover .brand {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 1.8rem;
-    margin: 12px 0;
-    font-style: italic;
-  }
+    /* Right photo page */
+    .product-photo-page {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-photo-page .photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--sky) 0%, var(--sky-deep) 100%);
+      padding: 24px;
+      text-align: center;
+    }
+    .photo-emoji {
+      font-size: 5rem;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 12px rgba(14,100,116,0.2));
+    }
+    .photo-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      max-width: 200px;
+      line-height: 1.5;
+    }
+    /* Real image when provided */
+    .product-photo-page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-  /* ---- NAVIGATION ---- */
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    margin-top: 22px;
-  }
-  .nav-btn {
-    background: none;
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold);
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.25s;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .nav-btn:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
-  .nav-btn:disabled { opacity: 0.25; cursor: default; }
-  .page-indicator {
-    color: rgba(201,168,76,0.6);
-    font-size: 0.72rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    min-width: 90px;
-    text-align: center;
-  }
+    /* ── BACK COVER ─────────────────────────────────────── */
+    .back-left {
+      background: var(--sky);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .back-left p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .back-left .brand-big {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-style: italic;
+      color: var(--teal);
+      margin-bottom: 24px;
+    }
+    .back-left .handmade-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 240px;
+    }
+    .back-right {
+      background: var(--teal);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .back-right .cloud-white {
+      width: 60px; height: 60px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .back-right .cloud-white::before {
+      content: '';
+      position: absolute;
+      top: -16px; left: 8px;
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+    }
+    .back-right .cloud-white::after {
+      content: '';
+      position: absolute;
+      top: -8px; right: 4px;
+      width: 24px; height: 24px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+    }
+    .back-right p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+    .back-right strong {
+      color: white;
+      font-weight: 500;
+    }
 
-  /* flipping class triggers */
-  .flipping { pointer-events: none; }
+    /* ── NAV ────────────────────────────────────────────── */
+    .book-nav {
+      width: 100%;
+      max-width: var(--spread-w);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      gap: 16px;
+    }
+    .nav-btn {
+      background: var(--white);
+      border: 1px solid var(--teal-pale);
+      color: var(--teal);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+    .nav-btn:disabled { opacity: 0.3; cursor: default; }
 
-  /* Page corners curl hint */
-  .page-front::before, .page-back::before {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 0 0 20px 20px;
-    border-color: transparent transparent rgba(201,168,76,0.12) transparent;
-    pointer-events: none;
-    z-index: 1;
-  }
-</style>
+    .nav-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--teal);
+      text-align: center;
+    }
+    .nav-progress-wrap {
+      width: 100%;
+      max-width: 320px;
+      height: 3px;
+      background: var(--teal-pale);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .nav-progress-bar {
+      height: 100%;
+      background: var(--teal);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .nav-label {
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── KEYBOARD HINT ──────────────────────────────────── */
+    .keyboard-hint {
+      margin-top: 14px;
+      font-size: 0.68rem;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+    .keyboard-hint kbd {
+      background: var(--white);
+      border: 1px solid var(--teal-pale);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 0.68rem;
+      color: var(--teal);
+    }
+
+    /* ── MOBILE ─────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      :root { --page-h: auto; }
+      .spread { flex-direction: column; }
+      .spread::before { display: none; }
+      .page-left, .page-right { min-height: 300px; }
+      .product-name-big { font-size: 2rem; }
+      .cover-left h1 { font-size: 2rem; }
+      .keyboard-hint { display: none; }
+      .index-grid { gap: 1px; }
+    }
+    @media (max-width: 480px) {
+      .product-info-page { padding: 28px 24px 24px; }
+      .product-name-big { font-size: 1.6rem; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="catalog-title">Colección Primavera — Verano 2026</div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <div class="logo-cloud"></div>
+      <span class="logo-text">Nube <em>Noba</em></span>
+    </div>
+    <span class="header-tag">Joyería artesanal · 2025</span>
+  </header>
 
-<div class="book-scene">
-  <div class="book" id="book">
+  <!-- BOOK -->
+  <main class="book-container">
 
-    <!-- PAGE 0: Front Cover (right) + blank (left back) -->
-    <div class="page right-page" id="page-0" onclick="flipNext()">
-      <div class="page-front">
-        <div class="cover">
-          <div class="cover-decor">
-            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="30" cy="30" r="28" stroke="#c9a84c" stroke-width="0.8"/>
-              <path d="M30 8 C22 8 16 15 16 24 C16 36 30 50 30 50 C30 50 44 36 44 24 C44 15 38 8 30 8Z" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
-              <path d="M24 20 Q30 14 36 20" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
-            </svg>
-          </div>
-          <div class="cover-line"></div>
-          <h1>MAISON<br><em>Élégance</em></h1>
-          <div class="cover-line"></div>
-          <div class="subtitle">Colección 2026</div>
-          <div class="season">Toca para pasar página →</div>
-        </div>
+    <!-- ════════════════ SPREAD 0: PORTADA + ÍNDICE ════════════════ -->
+    <div class="spread active" id="spread-0">
+      <div class="page-left cover-left">
+        <div class="cover-cloud-big"></div>
+        <p class="cover-subtitle">Catálogo 2025</p>
+        <h1>Nube<br><em>Noba</em></h1>
+        <p class="cover-tagline">Pendientes para<br>contar historias</p>
       </div>
-      <div class="page-back">
-        <div class="back-cover">
-          <p>Diseño exclusivo</p>
-          <div class="brand">Maison Élégance</div>
-          <p>maison-elegance.com</p>
+      <div class="page-right index-page">
+        <div class="index-title">Índice</div>
+        <div class="index-grid" id="index-grid">
+          <!-- JS fills this -->
         </div>
       </div>
     </div>
 
-    <!-- PAGE 1: Product 1 right / detail left -->
-    <div class="page right-page hidden-page" id="page-1" onclick="flipNext()">
-      <div class="page-front">
-        <div class="product-page">
-          <div class="product-image" style="background: linear-gradient(135deg,#e8d5c0,#d4b896)">
-            <div class="product-illus">🧥</div>
-          </div>
-          <div class="product-info">
-            <div>
-              <div class="product-category">Abrigos · Nueva temporada</div>
-              <div class="product-name">Abrigo Camel Structured</div>
-              <div class="product-desc">Lana virgen italiana con caída impecable. Corte masculino que abraza la silueta. El esencial de la temporada.</div>
-            </div>
-            <div class="product-footer">
-              <div class="product-ref">REF · ME-2601</div>
-              <div class="product-price">299 <span>€</span></div>
-            </div>
-          </div>
-        </div>
+    <!-- ════════════════ SPREADS DE PRODUCTO (JS) ════════════════ -->
+
+    <!-- ════════════════ SPREAD FINAL: CONTRAPORTADA ════════════════ -->
+    <div class="spread" id="spread-back">
+      <div class="page-left back-left">
+        <p>Hecho a mano con amor</p>
+        <div class="brand-big">Nube Noba</div>
+        <p class="handmade-note">Cada pendiente es una pieza única creada artesanalmente. Arcilla polimérica pintada a mano, una a una.</p>
       </div>
-      <div class="page-back">
-        <div class="left-info-page">
-          <div class="page-number">Pág. 02 · Abrigos</div>
-          <div class="detail-title">Abrigo Camel<br>Structured</div>
-          <div class="detail-desc">Una prenda icónica fabricada con lana merino de primera calidad procedente de los Alpes italianos. El corte oversize y el tono camel neutro lo convierten en el compañero perfecto de cualquier conjunto.</div>
-          <ul class="detail-specs">
-            <li><span>Composición</span><strong>90% Lana, 10% Cachemira</strong></li>
-            <li><span>Tallas</span><strong>XS — XL</strong></li>
-            <li><span>Cuidado</span><strong>Limpieza en seco</strong></li>
-          </ul>
-          <div class="color-dots">
-            <div class="color-dot" style="background:#c9a882"></div>
-            <div class="color-dot" style="background:#2b2520"></div>
-            <div class="color-dot" style="background:#8a7060"></div>
-          </div>
-        </div>
+      <div class="page-right back-right">
+        <div class="cloud-white"></div>
+        <p>
+          ¿Te ha gustado alguno?<br><br>
+          <strong>Escríbenos para pedir</strong><br><br>
+          Todos los modelos están disponibles bajo pedido.<br><br>
+          <strong>Precio: 3€</strong> (2€ algunos modelos)<br>
+          Envíos a toda España
+        </p>
       </div>
     </div>
 
-    <!-- PAGE 2: Product 2 -->
-    <div class="page right-page hidden-page" id="page-2" onclick="flipNext()">
-      <div class="page-front">
-        <div class="product-page">
-          <div class="product-image" style="background: linear-gradient(135deg,#d4c5e0,#b8a5cc)">
-            <div class="product-illus">👗</div>
-          </div>
-          <div class="product-info">
-            <div>
-              <div class="product-category">Vestidos · Colección cápsula</div>
-              <div class="product-name">Vestido Midi Lavanda</div>
-              <div class="product-desc">Seda natural con drapeado asimétrico. Exclusivo de la colección primavera. Perfecto para ocasiones especiales o el día a día con altura.</div>
-            </div>
-            <div class="product-footer">
-              <div class="product-ref">REF · ME-2615</div>
-              <div class="product-price">189 <span>€</span></div>
-            </div>
-          </div>
-        </div>
+  </main>
+
+  <!-- NAV -->
+  <nav class="book-nav">
+    <button class="nav-btn" id="btn-prev" aria-label="Anterior" disabled>←</button>
+    <div class="nav-center">
+      <div class="nav-title" id="nav-title">Portada</div>
+      <div class="nav-progress-wrap">
+        <div class="nav-progress-bar" id="progress-bar" style="width:0%"></div>
       </div>
-      <div class="page-back">
-        <div class="left-info-page">
-          <div class="page-number">Pág. 04 · Vestidos</div>
-          <div class="detail-title">Vestido Midi<br>Lavanda</div>
-          <div class="detail-desc">Fabricado en seda 100% natural teñida artesanalmente en Como, Italia. El tono lavanda suave aporta una feminidad discreta y sofisticada ideal para la temporada cálida.</div>
-          <ul class="detail-specs">
-            <li><span>Composición</span><strong>100% Seda natural</strong></li>
-            <li><span>Tallas</span><strong>34 — 44</strong></li>
-            <li><span>Cuidado</span><strong>Lavar a mano, 30°</strong></li>
-          </ul>
-          <div class="color-dots">
-            <div class="color-dot" style="background:#c8b8d8"></div>
-            <div class="color-dot" style="background:#f5e8d0"></div>
-            <div class="color-dot" style="background:#a8c8b8"></div>
-          </div>
-        </div>
-      </div>
+      <div class="nav-label" id="nav-label">1 / 29</div>
     </div>
+    <button class="nav-btn" id="btn-next" aria-label="Siguiente">→</button>
+  </nav>
 
-    <!-- PAGE 3: Product 3 -->
-    <div class="page right-page hidden-page" id="page-3" onclick="flipNext()">
-      <div class="page-front">
-        <div class="product-page">
-          <div class="product-image" style="background: linear-gradient(135deg,#d0e0d8,#a8c8b8)">
-            <div class="product-illus">👔</div>
-          </div>
-          <div class="product-info">
-            <div>
-              <div class="product-category">Camisas · Básicos premium</div>
-              <div class="product-name">Camisa Oxford Verde Salvia</div>
-              <div class="product-desc">Algodón peinado egipcio de 200 hilos. El verde salvia desaturado que define la paleta de la temporada. Corte relajado con detalles de costura en contraste.</div>
-            </div>
-            <div class="product-footer">
-              <div class="product-ref">REF · ME-2630</div>
-              <div class="product-price">95 <span>€</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page-back">
-        <div class="left-info-page">
-          <div class="page-number">Pág. 06 · Camisas</div>
-          <div class="detail-title">Camisa Oxford<br>Verde Salvia</div>
-          <div class="detail-desc">El tejido Oxford de algodón egipcio de alta densidad garantiza durabilidad y un tacto suave incomparable. La confección artesanal en Portugal asegura cada detalle de calidad.</div>
-          <ul class="detail-specs">
-            <li><span>Composición</span><strong>100% Algodón egipcio</strong></li>
-            <li><span>Tallas</span><strong>XS — XXL</strong></li>
-            <li><span>Cuidado</span><strong>Lavar 40°, planchar</strong></li>
-          </ul>
-          <div class="color-dots">
-            <div class="color-dot" style="background:#a8c0a8"></div>
-            <div class="color-dot" style="background:#f0ece0"></div>
-            <div class="color-dot" style="background:#8090a8"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PAGE 4: Product 4 -->
-    <div class="page right-page hidden-page" id="page-4" onclick="flipNext()">
-      <div class="page-front">
-        <div class="product-page">
-          <div class="product-image" style="background: linear-gradient(135deg,#e0d0c0,#c8b090)">
-            <div class="product-illus">👖</div>
-          </div>
-          <div class="product-info">
-            <div>
-              <div class="product-category">Pantalones · Sastre</div>
-              <div class="product-name">Pantalón Palazzo Ecru</div>
-              <div class="product-desc">Lino belga de alta gramaje con caída de pantalón amplio. Tiro alto que alarga la figura. La comodidad hecha elegancia para el verano.</div>
-            </div>
-            <div class="product-footer">
-              <div class="product-ref">REF · ME-2644</div>
-              <div class="product-price">129 <span>€</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page-back">
-        <div class="left-info-page">
-          <div class="page-number">Pág. 08 · Pantalones</div>
-          <div class="detail-title">Pantalón Palazzo<br>Ecru</div>
-          <div class="detail-desc">El lino belga de gramaje medio-alto ofrece cuerpo y caída simultáneamente. El tono ecru natural — sin tinción química — es el más sostenible de la colección y el más versátil de llevar.</div>
-          <ul class="detail-specs">
-            <li><span>Composición</span><strong>100% Lino belga</strong></li>
-            <li><span>Tallas</span><strong>34 — 46</strong></li>
-            <li><span>Cuidado</span><strong>Lavar 30°, en bolsa</strong></li>
-          </ul>
-          <div class="color-dots">
-            <div class="color-dot" style="background:#e8d8b8"></div>
-            <div class="color-dot" style="background:#1a1a1a"></div>
-            <div class="color-dot" style="background:#c0a888"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Back Cover page (left page, always visible) -->
-    <div class="page left-page" id="back-cover-left" style="z-index:0; pointer-events:none;">
-      <div class="page-front">
-        <div class="back-cover" style="border-radius: 4px 0 0 4px;">
-          <p>Diseño exclusivo</p>
-          <div class="brand">Maison Élégance</div>
-          <p>maison-elegance.com</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- NAVIGATION -->
-<div class="nav">
-  <button class="nav-btn" id="btn-prev" onclick="flipPrev()" disabled>←</button>
-  <div class="page-indicator" id="indicator">Portada</div>
-  <button class="nav-btn" id="btn-next" onclick="flipNext()">→</button>
-</div>
+  <p class="keyboard-hint">
+    Navega con <kbd>←</kbd> <kbd>→</kbd> o toca los botones
+  </p>
 
 <script>
-  const TOTAL_SPREADS = 5; // 0=cover, 1-4=products
-  let current = 0;
-  let isFlipping = false;
+/* ── DATA ─────────────────────────────────────────────────────── */
+const products = [
+  { name: 'Fantasmas',         series: null,            price: 3, emoji: '👻', desc: 'Pequeños fantasmas de arcilla blanca colgando de aros plateados. Encantadores y perfectos para los amantes de lo peculiar.' },
+  { name: 'Dados',             series: null,            price: 2, emoji: '🎲', desc: 'Dados de arcilla en miniatura. El accesorio perfecto para los amantes de los juegos de mesa.' },
+  { name: 'Corazones rosas',   series: null,            price: 3, emoji: '🩷', desc: 'Corazones de arcilla rosa vivos y vibrantes. Románticos sin ser empalagosos.' },
+  { name: 'Corazones rojos',   series: null,            price: 3, emoji: '❤️', desc: 'Corazones rojos intensos, más grandes y apasionados. El clásico reinventado.' },
+  { name: 'Fresas',            series: null,            price: 3, emoji: '🍓', desc: 'Fresitas de arcilla con hojitas verdes pintadas a mano. Dulces y divertidas.' },
+  { name: 'TNT',               series: 'Serie Minecraft', price: 3, emoji: '🟥', desc: 'Bloques TNT en miniatura de la saga Minecraft. Para fans de la dinamita y el píxel art.' },
+  { name: 'Sandías',           series: null,            price: 3, emoji: '🍉', desc: 'Medias lunas de sandía con semillitas negras pintadas. Frescura para todo el año.' },
+  { name: 'Bloques "?"',       series: 'Serie Mario Bros', price: 3, emoji: '🟨', desc: '¿Qué hay dentro? Los míticos bloques con interrogación de Mario Bros en versión miniatura.' },
+  { name: 'Sol',               series: 'Serie Universo', price: 3, emoji: '☀️', desc: 'Bola de arcilla mezclada en amarillos, rojos y naranjas que imita la energía solar.' },
+  { name: 'Cigarrillos',       series: null,            price: 3, emoji: '🚬', desc: 'Cigarrillos en miniatura de arcilla con punta anaranjada. Irreverentes y con actitud.' },
+  { name: 'Huevos fritos',     series: null,            price: 3, emoji: '🍳', desc: 'Huevos fritos con yema naranja perfectamente redondeada. Buenos días en miniatura.' },
+  { name: 'Cartas de amor',    series: null,            price: 3, emoji: '🃏', desc: 'Ases de corazones en arcilla blanca con corazoncito rojo tridimensional. Amor en tu oreja.' },
+  { name: 'Carne y huesos',    series: null,            price: 3, emoji: '🥩', desc: 'Una pieza de carne y un hueso blanquecino. Un dúo irresistible y sorprendente.' },
+  { name: 'Ojos rojos',        series: null,            price: 3, emoji: '👁️', desc: 'Ojos de arcilla burdeos con pupila blanca y negra. Misteriosos e hipnóticos.' },
+  { name: 'Sombrero de paja',  series: null,            price: 3, emoji: '🎩', desc: 'Sombrerito amarillo con franja roja inspirado en el icónico sombrero de paja del anime.' },
+  { name: 'Tierra',            series: 'Serie Universo', price: 3, emoji: '🌍', desc: 'Bolitas que mezclan verde y azul como continentes y océanos. Nuestro planeta en miniatura.' },
+  { name: 'Cubos tierra',      series: 'Serie Minecraft', price: 3, emoji: '🟫', desc: 'Bloques de tierra de Minecraft con la capa de hierba verde. Reconocibles al instante.' },
+  { name: 'Cubos hielo',       series: 'Serie Minecraft', price: 3, emoji: '🟦', desc: 'Bloques de hielo azul con nubes blancas. Fresquito pixel art en tu oreja.' },
+  { name: 'Nube y lluvia',     series: null,            price: 3, emoji: '🌧️', desc: 'Una nube mullida y una gota de lluvia, asimétricas y llenas de carácter.' },
+  { name: 'Reflejos de agua',  series: null,            price: 3, emoji: '💧', desc: 'Piezas planas con textura que imita el reflejo del agua. Abstractas y únicas.' },
+  { name: 'Jin y Jan',         series: null,            price: 3, emoji: '☯️', desc: 'El símbolo del yin yang en arcilla blanca y negra. Equilibrio en miniatura.' },
+  { name: 'Ojos negros',       series: null,            price: 3, emoji: '🖤', desc: 'Ojos grandes de iris blanco y pupila negra con borde oscuro. Expresivos y potentes.' },
+  { name: 'Manolo',            series: null,            price: 3, emoji: '🖤', desc: 'Una bolita negra con dos ojitos blancos. Simple, adorable y con muchísima personalidad.' },
+  { name: 'Slenderman',        series: 'Serie Minecraft', price: 3, emoji: '🟫', desc: 'La cara del Enderman de Minecraft con sus ojos morados brillantes en arcilla negra.' },
+  { name: 'Bola de pinchos',   series: null,            price: 3, emoji: '⚫', desc: 'Esfera negra con pinchos blancos que sobresalen. Edgy y con mucho carácter.' },
+  { name: 'Luna',              series: 'Serie Universo', price: 3, emoji: '🌑', desc: 'Bolitas de arcilla en gris oscuro mate que evocan la superficie lunar. Cósmica y serena.' },
+  { name: 'Sobres sorpresa',   series: null,            price: 2, emoji: '🎁', desc: 'Pendientes de diseño misterioso. ¡No sabes cuáles te van a llegar! Un detalle especial.' },
+];
 
-  const pages = [
-    document.getElementById('page-0'),
-    document.getElementById('page-1'),
-    document.getElementById('page-2'),
-    document.getElementById('page-3'),
-    document.getElementById('page-4'),
-  ];
+/* ── BUILD SPREADS ────────────────────────────────────────────── */
+const backSpread = document.getElementById('spread-back');
 
-  const indicators = ['Portada', 'Abrigos · 01', 'Vestidos · 02', 'Camisas · 03', 'Pantalones · 04'];
+products.forEach((p, i) => {
+  const div = document.createElement('div');
+  div.className = 'spread';
+  div.id = `spread-${i + 1}`;
+  div.innerHTML = `
+    <div class="page-left product-info-page">
+      <div class="product-num">Pendiente ${String(i + 1).padStart(2,'0')} / ${String(products.length).padStart(2,'0')}</div>
+      ${p.series ? `<span class="product-series-tag">${p.series}</span>` : ''}
+      <div class="product-name-big">${p.name}</div>
+      <div class="product-divider"></div>
+      <p class="product-desc-text">${p.desc}</p>
+      <div class="product-price-big">
+        <span class="amount">${p.price}</span>
+        <span class="currency">€</span>
+        <span class="label">por par</span>
+      </div>
+    </div>
+    <div class="page-right product-photo-page">
+      <div class="photo-placeholder">
+        <div class="photo-emoji">${p.emoji}</div>
+        <p class="photo-note">Añade aquí la foto del producto<br><code style="font-size:0.65rem;opacity:0.6">img/pendiente-${String(i+1).padStart(2,'0')}.jpg</code></p>
+      </div>
+    </div>
+  `;
+  backSpread.parentNode.insertBefore(div, backSpread);
+});
 
-  // Initial state
-  pages.forEach((p, i) => {
-    if (i === 0) {
-      p.style.zIndex = 5;
-    } else {
-      p.style.display = 'none';
-      p.style.zIndex = i;
-    }
-  });
+/* ── BUILD INDEX ──────────────────────────────────────────────── */
+const indexGrid = document.getElementById('index-grid');
+products.forEach((p, i) => {
+  const row = document.createElement('div');
+  row.className = 'index-item';
+  row.innerHTML = `
+    <span class="index-num">${String(i + 1).padStart(2,'0')}</span>
+    <span class="index-name">${p.name}</span>
+    ${p.series ? `<span class="index-series">${p.series.replace('Serie ','')}</span>` : ''}
+    <span class="index-price">${p.price}€</span>
+  `;
+  row.addEventListener('click', () => goTo(i + 1));
+  indexGrid.appendChild(row);
+});
 
-  function updateNav() {
-    document.getElementById('btn-prev').disabled = current === 0;
-    document.getElementById('btn-next').disabled = current >= TOTAL_SPREADS - 1;
-    document.getElementById('indicator').textContent = indicators[current] || '';
-  }
+/* ── NAVIGATION ───────────────────────────────────────────────── */
+const TOTAL = products.length + 2; // portada + productos + contraportada
+let current = 0;
 
-  function flipNext() {
-    if (isFlipping || current >= TOTAL_SPREADS - 1) return;
-    isFlipping = true;
+const spreads    = () => document.querySelectorAll('.spread');
+const btnPrev    = document.getElementById('btn-prev');
+const btnNext    = document.getElementById('btn-next');
+const navTitle   = document.getElementById('nav-title');
+const navLabel   = document.getElementById('nav-label');
+const progressBar = document.getElementById('progress-bar');
 
-    const page = pages[current];
-    page.style.zIndex = 10;
-    page.style.transition = 'transform 0.85s cubic-bezier(0.645,0.045,0.355,1.000)';
-    page.style.transform = 'rotateY(-180deg)';
+const titles = [
+  'Portada & Índice',
+  ...products.map(p => p.name),
+  'Hasta pronto ☁️',
+];
 
-    // Show next page behind
-    const next = pages[current + 1];
-    if (next) {
-      next.style.display = 'block';
-      next.style.zIndex = 4;
-      next.style.transform = 'rotateY(0deg)';
-    }
+function goTo(n) {
+  if (n < 0 || n >= TOTAL) return;
+  spreads().forEach(s => s.classList.remove('active'));
+  const id = n === TOTAL - 1 ? 'spread-back' : `spread-${n}`;
+  document.getElementById(id).classList.add('active');
+  current = n;
+  btnPrev.disabled = current === 0;
+  btnNext.disabled = current === TOTAL - 1;
+  navTitle.textContent  = titles[n] || '';
+  navLabel.textContent  = `${n + 1} / ${TOTAL}`;
+  progressBar.style.width = `${((n) / (TOTAL - 1)) * 100}%`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-    setTimeout(() => {
-      page.style.zIndex = 1;
-      current++;
-      updateNav();
-      isFlipping = false;
-    }, 870);
-  }
+btnNext.addEventListener('click', () => goTo(current + 1));
+btnPrev.addEventListener('click', () => goTo(current - 1));
 
-  function flipPrev() {
-    if (isFlipping || current <= 0) return;
-    isFlipping = true;
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  goTo(current + 1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    goTo(current - 1);
+});
 
-    const page = pages[current - 1];
-    page.style.zIndex = 10;
-    page.style.transition = 'transform 0.85s cubic-bezier(0.645,0.045,0.355,1.000)';
-    page.style.transform = 'rotateY(0deg)';
+// Touch swipe
+let tx = 0;
+document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+document.addEventListener('touchend',   e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 50) dx < 0 ? goTo(current + 1) : goTo(current - 1);
+}, { passive: true });
 
-    setTimeout(() => {
-      page.style.zIndex = 5;
-      if (current < pages.length && pages[current]) {
-        pages[current].style.zIndex = 3;
-      }
-      current--;
-      updateNav();
-      isFlipping = false;
-    }, 870);
-  }
-
-  // Keyboard navigation
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') flipNext();
-    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   flipPrev();
-  });
-
-  updateNav();
+goTo(0);
 </script>
 </body>
 </html>
